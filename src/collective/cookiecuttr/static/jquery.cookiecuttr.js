@@ -255,10 +255,7 @@
                     path: '/'
                 });
             }
-            $(".cc-cookies").fadeOut(function () {
-                // reload page to activate cookies
-                location.reload();
-            });
+            $(".cc-cookies").fadeOut();
         });
         //reset cookies
         $('a.cc-cookie-reset').click(function (f) {
@@ -269,10 +266,7 @@
             $.cookie("cc_cookie_decline", null, {
                 path: '/'
             });
-            $(".cc-cookies").fadeOut(function () {
-                // reload page to activate cookies
-                location.reload();
-            });
+            $(".cc-cookies").fadeOut();
         });
         //cookie error accept
         $('.cc-cookies-error a.cc-cookie-accept').click(function (g) {
@@ -284,8 +278,6 @@
             $.cookie("cc_cookie_decline", null, {
                 path: '/'
             });
-            // reload page to activate cookies
-            location.reload();
         });
     };
 })(jQuery);
