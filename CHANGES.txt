@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-0.7.7 (unreleased)
-------------------
+0.7.7+imio (2019-03-21)
+-----------------------
 
 - Avoid useless reload of the page : cookies are working without it
   [laulaz]
