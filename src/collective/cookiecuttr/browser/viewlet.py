@@ -63,7 +63,7 @@ class CookieCuttrViewlet(BrowserView):
             data['_default_'] = dict(
                 link=link[0].get('text'),
                 text=text[0].get('text'),
-                default=accept[0].get('text'),
+                accept=accept[0].get('text'),
             )
         return data
 

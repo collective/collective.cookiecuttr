@@ -5,13 +5,19 @@ Changelog
 0.7.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix text not displaying on accept button
+  See fourdigits/collective.cookiecuttr#19
+  [laulaz]
+
+- Avoid useless reload of the page : cookies are working without it
+  [laulaz]
 
 
 0.7.6 (2018-09-07)
 ------------------
 
-- Nothing changed yet.
+- Avoid displaying message multiple times
+  [laulaz]
 
 
 0.7.5 (2016-03-11)
