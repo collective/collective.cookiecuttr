@@ -5,7 +5,8 @@ Changelog
 0.7.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Avoid useless reload of the page : cookies are working without it
+  [laulaz]
 
 
 0.7.6 (2018-09-07)
