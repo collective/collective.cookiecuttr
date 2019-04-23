@@ -11,7 +11,8 @@ Changelog
 0.7.6 (2018-09-07)
 ------------------
 
-- Nothing changed yet.
+- Avoid displaying message multiple times
+  [laulaz]
 
 
 0.7.5 (2016-03-11)
