@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView as View
 from collective.cookiecuttr.interfaces import ICookieCuttr
 from collective.cookiecuttr.testing import\
     COLLECTIVE_COOKIECUTTR_INTEGRATION_TESTING
+from plone import api
 from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager
@@ -19,9 +19,8 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
     def setUp(self):
         self.app = self.layer['app']
         self.portal = self.layer['portal']
-        self.webstats_js = "analytics test"
-        pprops = getToolByName(self.portal, 'portal_properties')
-        pprops.site_properties.webstats_js = self.webstats_js
+        self.webstats_js = u"analytics test"
+        api.portal.set_registry_record('plone.webstats_js', self.webstats_js)
 
     def get_analytics_viewlet_contents(self, context, request, view):
         # Get the contents of the analytics viewlet or return a string
@@ -56,7 +55,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead'
+        manager_name = 'plone.htmlhead.links.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -98,7 +97,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead'
+        manager_name = 'plone.htmlhead.links.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -141,7 +140,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead'
+        manager_name = 'plone.htmlhead.links.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -202,7 +201,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead'
+        manager_name = 'plone.htmlhead.links.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -285,7 +284,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead'
+        manager_name = 'plone.htmlhead.links.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -340,8 +339,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
                              if v.__name__ == 'plone.analytics'][0]
 
         # Set something for the analytics viewlet
-        self.portal.portal_properties.site_properties.webstats_js = (
-            "analytics test")
+        api.portal.set_registry_record('plone.webstats_js', self.webstats_js)
 
         # CookieCuttr enabled, implied_consent enabled, user has no cookie,
         # analytics viewlet is rendered
@@ -363,7 +361,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead'
+        manager_name = 'plone.htmlhead.links.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
