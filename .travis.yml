@@ -3,6 +3,6 @@ python: "2.7"
 install:
   - mkdir -p buildout-cache/eggs
   - mkdir -p buildout-cache/downloads
-  - python bootstrap.py -c travis.cfg
+  - pip install -r requirements.txt
   - bin/buildout -N -t 3 -c travis.cfg
 script: bin/test
