@@ -55,7 +55,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead.links.links'
+        manager_name = 'plone.htmlhead.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -97,7 +97,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead.links.links'
+        manager_name = 'plone.htmlhead.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -140,7 +140,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead.links.links'
+        manager_name = 'plone.htmlhead.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -201,7 +201,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead.links.links'
+        manager_name = 'plone.htmlhead.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -284,7 +284,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead.links.links'
+        manager_name = 'plone.htmlhead.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
@@ -361,7 +361,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.htmlhead.links.links'
+        manager_name = 'plone.htmlhead.links'
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter(
