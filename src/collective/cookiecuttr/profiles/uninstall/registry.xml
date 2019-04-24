@@ -1,4 +1,13 @@
 <?xml version="1.0"?>
 <registry>
  <records interface="collective.cookiecuttr.interfaces.ICookieCuttrSettings" remove="True"/>
+
+ <records prefix="plone.resources/cookiecuttr"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry' remove="True"/>
+
+ <records prefix="plone.resources/cookiecuttr-cookie"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry' remove="True"/>
+
+ <records prefix="plone.bundles/cookiecuttr"
+          interface='Products.CMFPlone.interfaces.IBundleRegistry' remove="True"/>
 </registry>
