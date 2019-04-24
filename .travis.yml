@@ -6,8 +6,6 @@ cache:
     - eggs
     - downloads
 install:
-  - mkdir -p buildout-cache/eggs
-  - mkdir -p buildout-cache/downloads
   - pip install -r requirements.txt
   - buildout -N buildout:download-cache=downloads annotate
   - buildout -t 30 buildout:download-cache=downloads
