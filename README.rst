@@ -1,10 +1,10 @@
-.. image:: https://secure.travis-ci.org/fourdigits/collective.cookiecuttr.png
-    :target: http://travis-ci.org/fourdigits/collective.cookiecuttr
+.. image:: https://secure.travis-ci.org/collective/collective.cookiecuttr.png
+    :target: http://travis-ci.org/collective/collective.cookiecuttr
 
 Introduction
 ============
 This is an integration package for the `CookieCuttr jQuery plugin`_
-
+Versions >= 1.0.0 are for Plone 5+, if you use Plone 4.3, use versions 0.7.x.
 
 Installation
 ============
