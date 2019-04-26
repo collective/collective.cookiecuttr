@@ -4,10 +4,10 @@
 
  <records prefix="plone.resources/cookiecuttr"
           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-     <value key="js">++resource++collective.cookiecuttr/jquery.cookiecuttr.js</value>
+     <value key="js">++resource++collective.cookiecuttr/cookiecuttr.min.js</value>
      <value key="deps">jquery</value>
      <value key="css">
-       <element>++resource++collective.cookiecuttr/cookiecuttr.css</element>
+       <element>++resource++collective.cookiecuttr/cookiecuttr.min.css</element>
      </value>
  </records>
 
@@ -23,10 +23,10 @@
      <element>cookiecuttr</element>
    </value>
    <value key="enabled">True</value>
-   <value key="compile">True</value>
-   <value key="csscompilation">++resource++collective.cookiecuttr/cookiecuttr.min.css</value>
-   <value key="jscompilation">++resource++collective.cookiecuttr/cookiecuttr.min.js</value>
-   <value key="last_compilation">2019-04-24 11:50:00</value>
+   <value key="compile">False</value>
+   <value key="csscompilation">++plone++static/collective.cookiecuttr.min.compiled.css</value>
+   <value key="jscompilation">++plone++static/collective.cookiecuttr.min.compiled.js</value>
+   <value key="last_compilation"></value>
    <value key="depends">plone</value>
  </records>
 
