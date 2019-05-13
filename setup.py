@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.7.8.dev0'
+version = '1.0.0.dev0'
 
 long_description = (
     open('README.rst').read()
@@ -20,12 +20,18 @@ setup(name='collective.cookiecuttr',
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Environment :: Web Environment",
+        "Framework :: Plone",
+        "Framework :: Plone :: 5.1",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 2.7",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
         ],
       keywords='',
       author='Franklin Kingma',
       author_email='franklin@fourdigits.nl',
-      url='http://github.com/fourdigits/collective.cookiecuttr',
+      url='http://github.com/collective/collective.cookiecuttr',
       license='gpl',
       packages=find_packages('src'),
       package_dir={'': 'src'},

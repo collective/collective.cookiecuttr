@@ -1,4 +1,33 @@
 <?xml version="1.0"?>
 <registry>
  <records interface="collective.cookiecuttr.interfaces.ICookieCuttrSettings" />
+
+ <records prefix="plone.resources/cookiecuttr"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++resource++collective.cookiecuttr/cookiecuttr.min.js</value>
+     <value key="deps">jquery</value>
+     <value key="css">
+       <element>++resource++collective.cookiecuttr/cookiecuttr.min.css</element>
+     </value>
+ </records>
+
+ <records prefix="plone.resources/cookiecuttr-cookie"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++resource++collective.cookiecuttr/jquery.cookie.js</value>
+ </records>
+
+ <records prefix="plone.bundles/cookiecuttr"
+          interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+   <value key="resources">
+     <element>cookiecuttr-cookie</element>
+     <element>cookiecuttr</element>
+   </value>
+   <value key="enabled">True</value>
+   <value key="compile">False</value>
+   <value key="csscompilation">++plone++static/collective.cookiecuttr.min.compiled.css</value>
+   <value key="jscompilation">++plone++static/collective.cookiecuttr.min.compiled.js</value>
+   <value key="last_compilation"></value>
+   <value key="depends">plone</value>
+ </records>
+
 </registry>

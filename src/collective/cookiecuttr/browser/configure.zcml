@@ -5,7 +5,7 @@
 
     <browser:viewlet
         name="collective.cookiecuttr"
-        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
         class="collective.cookiecuttr.browser.viewlet.CookieCuttrViewlet"
         permission="zope2.View"
         layer="..interfaces.ICookieCuttr"
