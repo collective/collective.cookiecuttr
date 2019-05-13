@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0 (unreleased)
+1.0.0 (2019-05-13)
 ------------------
 
 - Add Plone 5 compatibility & drop support for Plone 4
