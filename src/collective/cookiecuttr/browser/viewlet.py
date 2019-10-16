@@ -8,12 +8,11 @@ from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
 from zope.component import getMultiAdapter
 from zope.component import getUtility
-from zope.interface import implements
+from zope.interface import implementer
 from zope.viewlet.interfaces import IViewlet
 
-
+@implementer(IViewlet)
 class CookieCuttrViewlet(BrowserView):
-    implements(IViewlet)
 
     def __init__(self, context, request, view, manager):
         super(CookieCuttrViewlet, self).__init__(context, request)
