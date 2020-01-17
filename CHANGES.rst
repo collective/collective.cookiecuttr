@@ -6,6 +6,9 @@ Changelog
 ------------------
 
 - use zope.interface.implementer instead of zope.interface.implements
+  [weberc]
+- Get rid of unittest2
+  [gbastien]
 
 
 1.0.0 (2019-05-13)

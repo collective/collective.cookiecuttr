@@ -3,7 +3,7 @@
 from Products.CMFCore.utils import getToolByName
 from collective.cookiecuttr.testing import\
     COLLECTIVE_COOKIECUTTR_INTEGRATION_TESTING
-import unittest2 as unittest
+import unittest
 
 
 class TestInstall(unittest.TestCase):
