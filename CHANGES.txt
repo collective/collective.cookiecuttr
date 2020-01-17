@@ -6,7 +6,7 @@ Changelog
 ------------------
 
 - Adapted code (implementer) to be Python3 compatible
- [gbastien]
+  [gbastien]
 
 
 1.0.0 (2019-05-13)
