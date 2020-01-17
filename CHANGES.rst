@@ -2,11 +2,12 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+1.0.1 (2020-01-17)
 ------------------
 
 - use zope.interface.implementer instead of zope.interface.implements
   [weberc]
+
 - Get rid of unittest2
   [gbastien]
 
