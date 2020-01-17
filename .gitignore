@@ -10,9 +10,12 @@ bin/
 develop-eggs/
 downloads/
 eggs/
+include/
+lib/
 parts/
 var/
 Gruntfile.js
 node_modules/
 package-lock.json
 package.json
+pip-selfcheck.json
