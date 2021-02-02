@@ -10,6 +10,8 @@
   <five:registerPackage package="." initialize=".initialize" />
   <i18n:registerTranslations directory="locales" />
 
+  <include file="permissions.zcml" />
+
   <include package="plone.app.registry" />
   <include package="plone.browserlayer" />
 
@@ -37,6 +39,14 @@
       source="0002"
       destination="0003"
       handler=".upgrades.upgrade_from_0002_to_0003"
+      profile="collective.cookiecuttr:default" />
+
+  <genericsetup:upgradeStep
+      title="Allow Site Administrators access to control panel"
+      description="update rolemap and controlpanel settings"
+      source="0003"
+      destination="0004"
+      handler=".upgrades.upgrade_from_0003_to_0004"
       profile="collective.cookiecuttr:default" />
 
   <genericsetup:registerProfile

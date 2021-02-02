@@ -15,7 +15,7 @@
         icon_expr="string:$portal_url/++resource++collective.cookiecuttr/cookiecuttr.png"
         visible="True"
         i18n:attributes="title">
-            <permission>Manage portal</permission>
+            <permission>Collective CookieCuttr: Settings</permission>
     </configlet>
 
 </object>
