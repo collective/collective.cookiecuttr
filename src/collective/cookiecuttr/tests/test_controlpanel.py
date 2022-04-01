@@ -7,6 +7,7 @@ from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.registry.interfaces import IRegistry
+from Products.CMFPlone.utils import get_installer
 from zope.component import getUtility
 
 import unittest
@@ -45,8 +46,8 @@ class ControlPanelTestCase(unittest.TestCase):
                         'control panel was not installed')
 
     def test_controlpanel_removed_on_uninstall(self):
-        qi = self.portal['portal_quickinstaller']
-        qi.uninstallProducts(products=[PROJECTNAME])
+        installer = get_installer(self.portal)
+        installer.uninstall_product(PROJECTNAME)
         actions = [a.getAction(self)['id']
                    for a in self.controlpanel.listActions()]
         self.assertTrue('cookiecuttr' not in actions,
@@ -90,6 +91,6 @@ class RegistryTestCase(unittest.TestCase):
 
     def test_records_removed_on_uninstall(self):
         # XXX: I haven't found a better way to test this; anyone?
-        qi = self.portal['portal_quickinstaller']
-        qi.uninstallProducts(products=[PROJECTNAME])
+        installer = get_installer(self.portal)
+        installer.uninstall_product(PROJECTNAME)
         self.assertRaises(KeyError, self.get_record, 'cookiecuttr_enabled')
