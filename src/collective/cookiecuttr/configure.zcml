@@ -6,12 +6,13 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.cookiecuttr">
 
-  <includeDependencies package="." />
   <five:registerPackage package="." initialize=".initialize" />
   <i18n:registerTranslations directory="locales" />
 
   <include package="plone.app.registry" />
+  <include package="plone.app.layout" />
   <include package="plone.browserlayer" />
+  <include package="collective.z3cform.datagridfield" />
 
   <include package=".browser" />
 

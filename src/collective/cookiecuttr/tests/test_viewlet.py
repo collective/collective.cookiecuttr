@@ -80,7 +80,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 
         # The analytics viewlet should be there and show its normal contents.
         analytics = self.get_analytics_viewlet_contents(context, request, view)
-        self.assertEqual(analytics, self.webstats_js)
+        self.assertIn(self.webstats_js, analytics)
 
     def test_viewlet_cookiecuttr_disabled(self):
         """Looking up and updating the manager should list our viewlet
@@ -123,7 +123,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 
         # The analytics viewlet should be there and show its normal contents.
         analytics = self.get_analytics_viewlet_contents(context, request, view)
-        self.assertEqual(analytics, self.webstats_js)
+        self.assertIn(self.webstats_js, analytics)
 
     def test_viewlet_cookiecuttr_enabled(self):
         """Looking up and updating the manager should list our viewlet
@@ -253,7 +253,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet[0].settings.cookiecuttr_enabled = False
         request.cookies['cc_cookie_accept'] = False
         analytics = self.get_analytics_viewlet_contents(context, request, view)
-        self.failUnlessEqual(analytics, self.webstats_js)
+        self.assertIn(self.webstats_js, analytics)
 
         # CookieCuttr enabled, user hasn't set cookie
         my_viewlet[0].settings.cookiecuttr_enabled = True
@@ -265,12 +265,12 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet[0].settings.cookiecuttr_enabled = False
         request.cookies['cc_cookie_accept'] = True
         analytics = self.get_analytics_viewlet_contents(context, request, view)
-        self.failUnlessEqual(analytics, self.webstats_js)
+        self.assertIn(self.webstats_js, analytics)
 
         # CookieCuttr enabled, user has set cookie
         my_viewlet[0].settings.cookiecuttr_enabled = True
         request.cookies['cc_cookie_accept'] = 'cc_cookie_accept'
-        self.failUnlessEqual(analytics, self.webstats_js)
+        self.assertIn(self.webstats_js, analytics)
 
     def test_viewlet_implied_consent(self):
         """Check the implied consent setting"""
@@ -346,7 +346,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet[0].settings.cookiecuttr_enabled = True
         my_viewlet[0].settings.implied_consent = True
         request.cookies['cc_cookie_accept'] = False
-        self.failUnlessEqual(analytics_viewlet.render(), "analytics test")
+        self.assertIn("analytics test", analytics_viewlet.render())
         analytics = self.get_analytics_viewlet_contents(context, request, view)
 
     def test_viewlet_location_bottom(self):

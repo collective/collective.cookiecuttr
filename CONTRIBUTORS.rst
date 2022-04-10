@@ -6,3 +6,4 @@
 - Natan Žabkar (nightmarebadger), option to move cookie message to the bottom,
   code cleanup
 - Laurent Lasudry (Affinitic), fixes and improvements, migration to Plone 5
+- Maurits van Rees (Zest), CI and support for Plone 6

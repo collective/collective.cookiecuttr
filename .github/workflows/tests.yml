@@ -1,0 +1,45 @@
+name: tests
+
+on:
+  push:
+   branches: [ master ]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - python-version: '2.7'
+            plone-version: '5.2-dev'
+          - python-version: '3.6'
+            plone-version: '5.2-dev'
+          - python-version: '3.7'
+            plone-version: '5.2-dev'
+          - python-version: '3.8'
+            plone-version: '5.2-dev'
+          - python-version: '3.7'
+            plone-version: '6.0-dev'
+          - python-version: '3.8'
+            plone-version: '6.0-dev'
+          - python-version: '3.9'
+            plone-version: '6.0-dev'
+    runs-on: ubuntu-latest
+    name: Tests
+    steps:
+      - name: Setup Plone ${{ matrix.plone-version }} with Python ${{ matrix.python-version }}
+        uses: plone/setup-plone@v1.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          plone-version: ${{ matrix.plone-version }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install addon package, in editable mode, with pip
+        run: |
+          pip install -e '.[test]' --use-deprecated legacy-resolver
+
+      - name: Run tests
+        run: |
+          zope-testrunner --auto-color --auto-progress --test-path src/
