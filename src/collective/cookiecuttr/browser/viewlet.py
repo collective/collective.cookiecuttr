@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser import BrowserView
 from collective.cookiecuttr.interfaces import ICookieCuttrSettings
 from plone.app.layout.analytics.view import AnalyticsViewlet
@@ -10,6 +8,12 @@ from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.interface import implementer
 from zope.viewlet.interfaces import IViewlet
+
+try:
+    from plone.base.utils import safe_text
+except ImportError:
+    from Products.CMFPlone.utils import safe_text
+
 
 @implementer(IViewlet)
 class CookieCuttrViewlet(BrowserView):
@@ -80,10 +84,9 @@ class CookieCuttrViewlet(BrowserView):
                 location_bottom = 'false'
                 if self.settings.location_bottom:
                     location_bottom = 'true'
-                snippet = safe_unicode(js_template % (link,
-                                                      text,
-                                                      accept_button,
-                                                      location_bottom))
+                snippet = safe_text(
+                    js_template % (link, text, accept_button, location_bottom)
+                )
                 return snippet
             else:
                 from logging import getLogger

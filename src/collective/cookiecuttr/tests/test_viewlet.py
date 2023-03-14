@@ -65,7 +65,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
             default=None,
         )
 
-        self.failUnless(manager)
+        self.assertTrue(manager)
 
         # calling update() on a manager causes it to set up its viewlets
         manager.update()
@@ -76,7 +76,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets
                       if v.__name__ == 'collective.cookiecuttr']
 
-        self.failUnlessEqual(len(my_viewlet), 1)
+        self.assertEqual(len(my_viewlet), 1)
 
         # The analytics viewlet should be there and show its normal contents.
         analytics = self.get_analytics_viewlet_contents(context, request, view)
@@ -107,7 +107,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
             default=None,
         )
 
-        self.failUnless(manager)
+        self.assertTrue(manager)
 
         # calling update() on a manager causes it to set up its viewlets
         manager.update()
@@ -118,8 +118,8 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets
                       if v.__name__ == 'collective.cookiecuttr']
 
-        self.failUnlessEqual(len(my_viewlet), 1)
-        self.failUnlessEqual(my_viewlet[0].render(), '')
+        self.assertEqual(len(my_viewlet), 1)
+        self.assertEqual(my_viewlet[0].render(), '')
 
         # The analytics viewlet should be there and show its normal contents.
         analytics = self.get_analytics_viewlet_contents(context, request, view)
@@ -150,7 +150,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
             default=None,
         )
 
-        self.failUnless(manager)
+        self.assertTrue(manager)
 
         # calling update() on a manager causes it to set up its viewlets
         manager.update()
@@ -161,7 +161,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets
                       if v.__name__ == 'collective.cookiecuttr']
 
-        self.failUnlessEqual(len(my_viewlet), 1)
+        self.assertEqual(len(my_viewlet), 1)
 
         my_viewlet[0].settings.cookiecuttr_enabled = True
 
@@ -183,7 +183,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 </script>
 
 """
-        self.failUnlessEqual(my_viewlet[0].render(), expected)
+        self.assertEqual(my_viewlet[0].render(), expected)
 
         # The analytics viewlet should be there and show nothing.
         analytics = self.get_analytics_viewlet_contents(context, request, view)
@@ -211,7 +211,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
             default=None,
         )
 
-        self.failUnless(manager)
+        self.assertTrue(manager)
 
         # calling update() on a manager causes it to set up its viewlets
         manager.update()
@@ -222,7 +222,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets
                       if v.__name__ == 'collective.cookiecuttr']
 
-        self.failUnlessEqual(len(my_viewlet), 1)
+        self.assertEqual(len(my_viewlet), 1)
 
         my_viewlet[0].settings.cookiecuttr_enabled = True
         expected = u"""
@@ -243,7 +243,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 </script>
 
 """
-        self.failUnlessEqual(my_viewlet[0].render(), expected)
+        self.assertEqual(my_viewlet[0].render(), expected)
 
         # The analytics viewlet should be there and be empty.
         analytics = self.get_analytics_viewlet_contents(context, request, view)
@@ -259,7 +259,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet[0].settings.cookiecuttr_enabled = True
         request.cookies['cc_cookie_accept'] = False
         analytics = self.get_analytics_viewlet_contents(context, request, view)
-        self.failUnlessEqual(analytics, '')
+        self.assertEqual(analytics, '')
 
         # CookieCuttr disabled, user has set cookie
         my_viewlet[0].settings.cookiecuttr_enabled = False
@@ -294,7 +294,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
             default=None,
         )
 
-        self.failUnless(manager)
+        self.assertTrue(manager)
 
         # calling update() on a manager causes it to set up its viewlets
         manager.update()
@@ -305,7 +305,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets
                       if v.__name__ == 'collective.cookiecuttr']
 
-        self.failUnlessEqual(len(my_viewlet), 1)
+        self.assertEqual(len(my_viewlet), 1)
 
         my_viewlet[0].settings.cookiecuttr_enabled = True
         expected = u"""
@@ -326,7 +326,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 </script>
 
 """
-        self.failUnlessEqual(my_viewlet[0].render(), expected)
+        self.assertEqual(my_viewlet[0].render(), expected)
 
         footer_manager = queryMultiAdapter((context, request, view),
                                            IViewletManager,
@@ -371,7 +371,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
             default=None,
         )
 
-        self.failUnless(manager)
+        self.assertTrue(manager)
 
         # calling update() on a manager causes it to set up its viewlets
         manager.update()
@@ -382,7 +382,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets
                       if v.__name__ == 'collective.cookiecuttr']
 
-        self.failUnlessEqual(len(my_viewlet), 1)
+        self.assertEqual(len(my_viewlet), 1)
 
         my_viewlet[0].settings.cookiecuttr_enabled = True
         expected = u"""
@@ -403,7 +403,7 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 </script>
 
 """
-        self.failUnlessEqual(my_viewlet[0].render(), expected)
+        self.assertEqual(my_viewlet[0].render(), expected)
         my_viewlet[0].settings.location_bottom = True
 
         expected = u"""
@@ -424,4 +424,4 @@ class CookieCuttrViewletTestCase(unittest.TestCase):
 </script>
 
 """
-        self.failUnlessEqual(my_viewlet[0].render(), expected)
+        self.assertEqual(my_viewlet[0].render(), expected)

@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from plone.registry.interfaces import IRegistry
 from zope.component import queryUtility
 
 import logging
+
+try:
+    from plone.base.utils import safe_text
+except ImportError:
+    from Products.CMFPlone.utils import safe_text
+
 
 PROFILE_ID = 'profile-collective.cookiecuttr:default'
 UNINSTALL = 'profile-collective.cookiecuttr:uninstall'
@@ -50,7 +55,7 @@ def upgrade_to_0002(context, logger=None):
 
     # save preexisting data in a dict
     lt = getToolByName(context, 'portal_languages')
-    lang = safe_unicode(lt.getDefaultLanguage())
+    lang = safe_text(lt.getDefaultLanguage())
     registry['collective.cookiecuttr.interfaces.ICookieCuttrSettings.text'] = [dict(language=lang, text=text)]
     registry['collective.cookiecuttr.interfaces.ICookieCuttrSettings.link'] = [dict(language=lang, text=link)]
     registry['collective.cookiecuttr.interfaces.ICookieCuttrSettings.accept_button'] = [dict(language=lang, text=accept)]
