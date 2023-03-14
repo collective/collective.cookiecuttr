@@ -33,7 +33,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           plone-version: ${{ matrix.plone-version }}
-          setuptools-version: ${{ matrix.setuptools-version || ''}}
+          setuptools-version: ${{ matrix.setuptools-version || '65.7.0'}}
 
       - name: Checkout
         uses: actions/checkout@v3
