@@ -5,7 +5,7 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
-- Add support for Plone 5 and 6, on all supported Python versions.
+- Add support for Plone 5.2 and 6.0, on all officially supported Python versions.
   Plone 5.2 was working already, but not tested yet.  [maurits]
 
 - Drop support for Plone 5.1.  [maurits]
