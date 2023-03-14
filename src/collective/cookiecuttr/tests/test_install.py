@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import get_installer
 from collective.cookiecuttr.testing import\
     COLLECTIVE_COOKIECUTTR_INTEGRATION_TESTING
 import unittest
+
+try:
+    from plone.base.utils import get_installer
+except ImportError:
+    from Products.CMFPlone.utils import get_installer
 
 
 class TestInstall(unittest.TestCase):

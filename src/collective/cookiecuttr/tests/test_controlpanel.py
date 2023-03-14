@@ -7,10 +7,16 @@ from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.registry.interfaces import IRegistry
-from Products.CMFPlone.utils import get_installer
 from zope.component import getUtility
 
 import unittest
+
+
+try:
+    from plone.base.utils import get_installer
+except ImportError:
+    from Products.CMFPlone.utils import get_installer
+
 
 PROJECTNAME = 'collective.cookiecuttr'
 
