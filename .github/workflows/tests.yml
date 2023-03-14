@@ -10,9 +10,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - python-version: '2.7'
-            plone-version: '5.2-dev'
-            setuptools-version: '42.0.2'
           - python-version: '3.7'
             plone-version: '5.2-dev'
           - python-version: '3.8'
@@ -33,7 +30,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           plone-version: ${{ matrix.plone-version }}
-          setuptools-version: ${{ matrix.setuptools-version || '65.7.0'}}
 
       - name: Checkout
         uses: actions/checkout@v3
