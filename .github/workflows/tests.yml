@@ -12,6 +12,7 @@ jobs:
         include:
           - python-version: '2.7'
             plone-version: '5.2-dev'
+            setuptools-version: '42.0.2'
           - python-version: '3.7'
             plone-version: '5.2-dev'
           - python-version: '3.8'
@@ -32,13 +33,14 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           plone-version: ${{ matrix.plone-version }}
+          setuptools-version: ${{ matrix.setuptools-version || ''}}
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install addon package, in editable mode, with pip
         run: |
-          pip install -e '.[test]' --use-deprecated legacy-resolver
+          pip install -e '.[test]'
 
       - name: Run tests
         run: |
