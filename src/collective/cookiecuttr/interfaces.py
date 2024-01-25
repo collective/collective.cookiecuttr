@@ -23,10 +23,12 @@ class ITextRowSchema(Interface):
     language = schema.TextLine(
         title=_(u"Language"),
         description=_(u'Enter the language code. Ex.: en'),
+        required=False,
     )
 
     text = schema.Text(
         title=_(u"Text"),
+        required=False,
     )
 
 
@@ -35,10 +37,12 @@ class ITextLinkSchema(Interface):
     language = schema.TextLine(
         title=_(u"Language"),
         description=_(u'Enter the language code. Ex.: en'),
+        required=False,
     )
 
     text = schema.Text(
         title=_(u"Link to page"),
+        required=False,
     )
 
 
@@ -47,10 +51,12 @@ class ITextAcceptSchema(Interface):
     language = schema.TextLine(
         title=_(u"Language"),
         description=_(u'Enter the language code. Ex.: en'),
+        required=False,
     )
 
     text = schema.Text(
         title=_(u"Text to show in the Accept button"),
+        required=False,
     )
 
 

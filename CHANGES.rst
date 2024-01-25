@@ -5,6 +5,8 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
+- Fixed always failing validation in control panel on Plone 6.  [maurits]
+
 - Fix resource bundles on Plone 6.  [maurits]
 
 
