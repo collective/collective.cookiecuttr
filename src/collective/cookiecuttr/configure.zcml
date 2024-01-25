@@ -40,6 +40,13 @@
       handler=".upgrades.upgrade_from_0002_to_0003"
       profile="collective.cookiecuttr:default" />
 
+  <genericsetup:upgradeDepends
+      title="Fix resource bundle for Plone 6"
+      source="0003"
+      destination="0004"
+      import_steps="plone.app.registry"
+      profile="collective.cookiecuttr:default" />
+
   <genericsetup:registerProfile
       name="uninstall"
       title="collective.cookiecuttr uninstall profile"

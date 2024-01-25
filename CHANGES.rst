@@ -5,7 +5,7 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix resource bundles on Plone 6.  [maurits]
 
 
 2.0.0 (2023-03-14)
