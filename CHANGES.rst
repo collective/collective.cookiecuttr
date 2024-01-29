@@ -5,6 +5,10 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
+- Fix SyntaxError in javascript with newer jQuery.
+  Clicking the "accept cookies" button now works on Plone 5.2 and 6.0.
+  [maurits]
+
 - Fixed always failing validation in control panel on Plone 6.  [maurits]
 
 - Fix resource bundles on Plone 6.  [maurits]
