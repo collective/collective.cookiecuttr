@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.1 (unreleased)
+2.0.1 (2024-01-29)
 ------------------
 
 - Fix SyntaxError in javascript with newer jQuery.
